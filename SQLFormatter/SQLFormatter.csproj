@@ -148,6 +148,7 @@
     <Compile Include="SQLFormatterPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PkgCmdID.cs" />
+    <Compile Include="VBSQLTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Preview.resx">

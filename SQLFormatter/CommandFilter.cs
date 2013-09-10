@@ -56,7 +56,7 @@ namespace RobEllis.SQLFormatter
             if (pguidCmdGroup == GuidList.guidSQLFormatterCmdSet &&
                 nCmdID == PkgCmdIDList.cmdIdFormatSql)
             {
-                ShowSelection();
+                ShowPreview();
                 return VSConstants.S_OK;
             }
 
@@ -88,12 +88,16 @@ namespace RobEllis.SQLFormatter
             }
         }
 
-        private void ShowSelection()
+        private void ShowPreview()
         {
-            string c = _view.TextBuffer.CurrentSnapshot.GetText(_view.Selection.SelectedSpans[0]);
-            //string txt = _view.Selection.SelectedSpans.ToString();
-            //MessageBox.Show(c);
-            var preview = new Preview(new VBSQLTransformer(c));
+            Span replaceSpan = _view.Selection.SelectedSpans[0];
+            string replaceText = _view.TextBuffer.CurrentSnapshot.GetText(replaceSpan);
+            var preview = new Preview(new VbsqlTransformer(replaceText));
+            if (preview.ShowDialog() == DialogResult.OK)
+            {
+                _view.TextBuffer.Replace(replaceSpan, preview.ResultText);
+            }
+
         }
     }
 }
