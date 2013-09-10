@@ -92,7 +92,8 @@ namespace RobEllis.SQLFormatter
         {
             string c = _view.TextBuffer.CurrentSnapshot.GetText(_view.Selection.SelectedSpans[0]);
             //string txt = _view.Selection.SelectedSpans.ToString();
-            MessageBox.Show(c);
+            //MessageBox.Show(c);
+            var preview = new Preview(new VBSQLTransformer(c));
         }
     }
 }
