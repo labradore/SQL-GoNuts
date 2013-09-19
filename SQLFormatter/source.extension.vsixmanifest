@@ -4,8 +4,9 @@
     <Identity Id="4ddbd29a-f8a5-4db9-aaaa-7c9a79ecd0ba" Version="1.0" Language="en-US" Publisher="Rob Ellis" />
     <DisplayName>SQLFormatter</DisplayName>
     <Description>Formats SQL command strings into multi-line string literals with optinoal variable replacements.</Description>
+    <Icon>ExtIcon.ico</Icon>
   </Metadata>
-  <Installation InstalledByMsi="false">
+  <Installation InstalledByMsi="false" AllUsers="true">
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
   </Installation>
   <Dependencies>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Preview));
             this.SourceTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
             this.ResultTextBox = new FastColoredTextBoxNS.FastColoredTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -289,6 +290,7 @@
             this.CancelButton = this.Cancel_Button;
             this.ClientSize = new System.Drawing.Size(828, 514);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Preview";
             this.Text = "Preview";
             ((System.ComponentModel.ISupportInitialize)(this.SourceTextBox)).EndInit();
